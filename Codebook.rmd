@@ -1,0 +1,32 @@
+---
+title: "Codebook"
+author: "Scott Brenstuhl"
+date: "July 26, 2015"
+output: html_document
+---
+## Project Description
+In this project we collect accelorometer data that was gathered from thirty subjects who carried Samsung Galexy S smartphones. We then combine the data into a usable format, retain only means and standard deviations of the various mesurments, and clarify the labeling of the data. Finally we take the average of each remaining variable for each subject's six activities and write it to a text file.
+
+##Study design and data processing
+
+###Collection of the raw data
+The raw data was collected by checking if a "/data" directory exists, then creading it if it does not. Then checking if the zip file has been downloaded, and donloading it if it does not. Finally it checks if the zip file has been unziped and unzips it if it has not.
+
+###Note on the original (raw) data 
+I saw in the discussion boards that some people prefer to unzipping the file directly in the working directory, however I did so in a /data directory seems to be more in line with our example videos. This way satisfies the requirment that run_analysis.R can run as long as the Samsung data is in the directory since it will gather the data itself and all data reading functions are set up to look in the /data directory.
+
+##Creating the tidy datafile
+
+###Guide to create the tidy data file
+This script will gather the date itself and create a txt file of the tidy data (named "Averaged_data.txt")
+1. Set your working directory to where you want the resulting file saved 
+2. Save the run_analysis.R script in your working directory
+3. Run source("run_analysis.R")
+
+###Cleaning of the data
+Once all of the data is read in, the script combines the data. It then gathers only labeling colums and ones where the variable contains mean() or std(). It then renames the column to be more easy to read/descriptive by removing punctuaton and replacing it all with single spaces. Finally the numeric activity data is replaced by descriptive activity names.[link to the readme document that describes the code in greater detail]()
+
+##Description of the variables in the tiny_data.txt file
+General description of the file including:
+ - Dimensions: 180 x 68
+
